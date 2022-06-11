@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { GTM_ID } from '../lib/gtm'
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { GTM_ID } from "../lib/gtm";
 
 export default class MyDocument extends Document {
   render() {
@@ -7,18 +7,20 @@ export default class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+          {/* Google Tag Manager (noscript) */}
           <noscript>
             <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              src="https://www.googletagmanager.com/ns.html?id=GTM-PMLSNWD"
               height="0"
               width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
+              style="display:none;visibility:hidden"
+            ></iframe>
           </noscript>
+          {/* End Google Tag Manager (noscript) */}
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
